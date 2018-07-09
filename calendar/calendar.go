@@ -1,8 +1,10 @@
 // Package calendar contains operations which are performed on a general calendar
 package calendar
 
-import "sort"
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 // OverlappingEvent represents a pair of events that overlap with each other
 type OverlappingEvent struct {
