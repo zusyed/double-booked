@@ -12,7 +12,7 @@ import (
 )
 
 func main() {
-	filename := flag.String("input file", "input.txt", "the name of the file to read the input from")
+	filename := flag.String("input", "input.txt", "the name of the file to read the input from")
 	flag.Parse()
 
 	inFile, err := os.Open(*filename)
