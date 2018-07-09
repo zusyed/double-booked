@@ -268,6 +268,61 @@ func TestGetOverlappingEvents(t *testing.T) {
 				},
 			},
 		},
+		"12: unsorted events": {
+			input: []calendar.Event{
+				calendar.Event{
+					StartTime: 1,
+					EndTime:   9,
+				},
+				calendar.Event{
+					StartTime: 10,
+					EndTime:   15,
+				},
+				calendar.Event{
+					StartTime: 2,
+					EndTime:   10,
+				},
+				calendar.Event{
+					StartTime: 25,
+					EndTime:   27,
+				},
+				calendar.Event{
+					StartTime: 15,
+					EndTime:   16,
+				},
+				calendar.Event{
+					StartTime: 16,
+					EndTime:   20,
+				},
+				calendar.Event{
+					StartTime: 17,
+					EndTime:   20,
+				},
+			},
+			expectedErr: nil,
+			expectedOutput: []calendar.OverlappingEvent{
+				calendar.OverlappingEvent{
+					Event1: calendar.Event{
+						StartTime: 1,
+						EndTime:   9,
+					},
+					Event2: calendar.Event{
+						StartTime: 2,
+						EndTime:   10,
+					},
+				},
+				calendar.OverlappingEvent{
+					Event1: calendar.Event{
+						StartTime: 16,
+						EndTime:   20,
+					},
+					Event2: calendar.Event{
+						StartTime: 17,
+						EndTime:   20,
+					},
+				},
+			},
+		},
 	}
 
 	for testCase, test := range tests {
