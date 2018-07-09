@@ -16,3 +16,12 @@ There is a [main.go](https://github.com/zusyed/double-booked/blob/e6e2b2d405267a
 ## Algorithm Analysis
 The function `GetOverlappingEvents` runs in `O(nLog(n))` where n is the number of events in the calendar. This is because the function sorts the input. If the input is guaranteed to be sorted, it can be reduced to run in `O(n)` time by removing the call to `sort`.
 
+## Dependencies
+ - Golang
+
+## Run the program
+ - ```go build```
+ - ```./doublebooked -input={inputFile}```
+ 
+## Input File
+The input file must contain the start and end time in the same line separated by a space. Each line is a separate event in the calendar. Take a look at the [input.txt](https://github.com/zusyed/double-booked/blob/406c74f6a8a37bce9a881e6c545494c612626d4a/input.txt) file for an example.
