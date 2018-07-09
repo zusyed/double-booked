@@ -15,7 +15,7 @@ type OverlappingEvent struct {
 	Event2 Event
 }
 
-// GetOverlappingEvents returns all events which collides with other events
+// GetOverlappingEvents returns all pairs of overlapping events
 func GetOverlappingEvents(events []Event) ([]OverlappingEvent, error) {
 	var overlappingEvents []OverlappingEvent
 	if len(events) < 2 {
